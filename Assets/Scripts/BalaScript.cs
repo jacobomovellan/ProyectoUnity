@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class BalaScript : MonoBehaviour
 {
+     public AudioClip Sound;
      public float Speed;
      private Rigidbody2D Rigidbody2D;
      private Vector2 Direction;
@@ -12,6 +13,7 @@ public class BalaScript : MonoBehaviour
     {
 
         Rigidbody2D = GetComponent<Rigidbody2D>();
+        Camera.main.GetComponent<AudioSource>().PlayOneShot(Sound);
         
     }
 
