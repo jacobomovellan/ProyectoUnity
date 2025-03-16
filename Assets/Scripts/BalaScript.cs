@@ -29,4 +29,19 @@ public class BalaScript : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        John1 john = collision.GetComponent<John1>();
+        GruntArchivo grunt = collision.GetComponent<GruntArchivo>();
+        if (john != null)
+        {
+            john.Hit();
+        }
+        if(grunt != null)
+        {
+            grunt.Hit();
+        }
+        DestroyBala();
+    }
 }
